@@ -1,6 +1,9 @@
+import 'package:calculator_app/app/core/observer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 

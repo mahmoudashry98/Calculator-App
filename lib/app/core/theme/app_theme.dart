@@ -20,11 +20,11 @@ final ThemeData appTheme = ThemeData(
         ),
       ),
     ),
-    inputDecorationTheme: InputDecorationTheme(
+    inputDecorationTheme: const InputDecorationTheme(
       hintStyle: TextStyle(
         //fontFamily: CommonVariables.settings.read(FONT_FAMILY),
         fontSize: 13,
-        color: const Color(0xffa0a0a0),
+        color: Color(0xffa0a0a0),
       ),
       labelStyle: TextStyle(
         //fontFamily: CommonVariables.settings.read(FONT_FAMILY),
@@ -33,12 +33,12 @@ final ThemeData appTheme = ThemeData(
         //   color: const Color(0xff000000),
       ),
       alignLabelWithHint: true,
-      focusedBorder: const OutlineInputBorder(
+      focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
           color: kMainColor,
         ),
       ),
-      border: const OutlineInputBorder(
+      border: OutlineInputBorder(
         borderSide: BorderSide(
           color: Color(0xffa0a0a0),
         ),
@@ -100,7 +100,7 @@ final ThemeData appDarkTheme = ThemeData(
     ),
   ),
   indicatorColor: kMainColor,
-  inputDecorationTheme: InputDecorationTheme(
+  inputDecorationTheme: const InputDecorationTheme(
     hintStyle: TextStyle(
       // fontFamily: CommonVariables.settings.read(FONT_FAMILY),
       fontSize: 13,
@@ -109,15 +109,15 @@ final ThemeData appDarkTheme = ThemeData(
       // fontFamily: CommonVariables.settings.read(FONT_FAMILY),
       fontSize: 14,
       fontWeight: FontWeight.bold,
-      color: const Color(0xffffffff),
+      color: Color(0xffffffff),
     ),
     alignLabelWithHint: true,
-    focusedBorder: const OutlineInputBorder(
+    focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xffa0a0a0),
       ),
     ),
-    border: const OutlineInputBorder(
+    border: OutlineInputBorder(
       borderSide: BorderSide(
         color: Color(0xffa0a0a0),
       ),
