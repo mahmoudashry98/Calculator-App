@@ -17,7 +17,7 @@ class CalculatorCubit extends Cubit<CalculatorDisplay> {
     final currentExpression = state.expression;
 
     // Split the current expression by operators to check the length of each segment
-    List<String> segments = currentExpression.split(RegExp(r'[\+\-\*/÷x]'));
+    List<String> segments = currentExpression.split(RegExp(r'[\+\-\*/÷x%]'));
     bool exceedsLimit = segments.any((segment) => segment.length >= 15);
 
     if (!exceedsLimit) {
@@ -56,9 +56,8 @@ class CalculatorCubit extends Cubit<CalculatorDisplay> {
 
   void delete() {
     final currentExpression = state.expression;
-    final newExpression = currentExpression.isNotEmpty
-        ? currentExpression.substring(0, currentExpression.length - 1)
-        : '';
+    final newExpression =
+        currentExpression.isNotEmpty ? currentExpression.substring(0, currentExpression.length - 1) : '';
     emit(CalculatorDisplay(newExpression, state.result));
   }
 
@@ -77,8 +76,15 @@ class CalculatorCubit extends Cubit<CalculatorDisplay> {
     // Replace symbols for division and multiplication
     expression = expression.replaceAll('÷', '/').replaceAll('x', '*');
 
+    // Replace % with its mathematical representation
+    expression = expression.replaceAllMapped(RegExp(r'(\d+(\.\d+)?)%'), (Match m) {
+      // Convert percentage to decimal
+      double value = double.parse(m[1]!) / 100;
+      return value.toString();
+    });
+
     // Basic validation for invalid characters, now including x and ÷
-    if (!RegExp(r'^[0-9+\-*/.() x÷]+$').hasMatch(expression)) {
+    if (!RegExp(r'^[0-9+\-*/.()% x÷]+$').hasMatch(expression)) {
       return 'Invalid characters in expression';
     }
 

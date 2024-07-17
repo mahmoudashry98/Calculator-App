@@ -1,9 +1,11 @@
 
-import 'package:calculator_app/app/core/observer.dart';
-import 'package:calculator_app/app/features/calculator_cubit/logic/cubit/calculator_cubit.dart';
-import 'package:calculator_app/app/features/calculator_cubit/ui/screens/calculator_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'app/core/observer.dart';
+import 'app/features/calculator_cubit/logic/cubit/calculator_cubit.dart';
+import 'app/features/calculator_cubit/ui/screens/calculator_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
