@@ -33,7 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
-  fluttertoast: ^8.2.6
+  fluttertoast:
   math_expressions: ^2.5.0
 
 dev_dependencies:
