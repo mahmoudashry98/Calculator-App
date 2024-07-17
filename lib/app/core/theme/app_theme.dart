@@ -1,6 +1,8 @@
-import 'package:com.mahersh.calculatorapp/app/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'app_color.dart';
+
 
 final ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: kScaffoldBackgroundColor,
